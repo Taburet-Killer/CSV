@@ -1,0 +1,46 @@
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\x86\sqlite3.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\x64\sqlite3.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\csv.exe.config
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\csv.exe
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\csv.pdb
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\Microsoft.Data.Sqlite.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\SQLitePCLRaw.core.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\System.Buffers.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\System.Memory.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\System.Numerics.Vectors.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\Microsoft.Data.Sqlite.xml
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\System.Buffers.xml
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\System.Memory.xml
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\System.Numerics.Vectors.xml
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\obj\Debug\csv.csprojAssemblyReference.cache
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\obj\Debug\csv.csproj.CoreCompileInputs.cache
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\obj\Debug\csv.csproj.CopyComplete
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\obj\Debug\csv.exe
+V:\Общая для записи студентам\207а 2023-2024 ПРИВЕТ! КАК ДЕЛА& (ОТВЕТЬ В НАЗВАНИИ)\[-Системное программирование-]\Михайлов 307А\csv\csv\csv\obj\Debug\csv.pdb
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\x86\sqlite3.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\x64\sqlite3.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\csv.exe.config
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\csv.exe
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\csv.pdb
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\System.Buffers.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\System.Memory.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\Microsoft.Data.Sqlite.xml
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\System.Buffers.xml
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\System.Memory.xml
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Преподаватель\Desktop\csv\csv\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.csprojAssemblyReference.cache
+C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.csproj.CoreCompileInputs.cache
+C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.csproj.CopyComplete
+C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.exe
+C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.pdb
