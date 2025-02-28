@@ -44,3 +44,35 @@ C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.csproj.CoreCom
 C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.csproj.CopyComplete
 C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.exe
 C:\Users\Преподаватель\Desktop\csv\csv\obj\Debug\csv.pdb
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\obj\Debug\csv.csprojAssemblyReference.cache
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\obj\Debug\csv.csproj.CoreCompileInputs.cache
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\obj\Debug\csv.exe
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\obj\Debug\csv.pdb
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\csv.exe.config
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\csv.exe
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\csv.pdb
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\Microsoft.Data.Sqlite.xml
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\obj\Debug\csv.csproj.CopyComplete
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\x86\e_sqlite3.dll
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\x64\e_sqlite3.dll
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\студент\Desktop\CSV-main\CSV-main\csv\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\x86\e_sqlite3.dll
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\x64\e_sqlite3.dll
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\csv.exe.config
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\csv.exe
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\csv.pdb
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\Microsoft.Data.Sqlite.dll
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\SQLitePCLRaw.batteries_green.dll
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\SQLitePCLRaw.core.dll
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\bin\Debug\Microsoft.Data.Sqlite.xml
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\csv.csprojAssemblyReference.cache
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\csv.csproj.CoreCompileInputs.cache
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\csv.csproj.CopyComplete
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\csv.exe
+D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\csv.pdb
