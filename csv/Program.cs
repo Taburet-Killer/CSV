@@ -37,14 +37,14 @@ namespace csv
                 switch (input)
                 {
                     case "dir":
-                        var dir = Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\data");
-                        var file = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Repository");
-                        foreach (var dirs in dir)
+                        string[] dir = Directory.GetDirectories(Directory.GetCurrentDirectory() + "\\Repository");
+                        string[] file = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Repository");
+                        foreach (string dirs in dir)
                         {
                             DirectoryInfo dirinfo = new DirectoryInfo(dirs);
                             Console.WriteLine(dirinfo.Name);
                         }
-                        foreach (var files in file)
+                        foreach (string files in file)
                         {
                             FileInfo fileInfo = new FileInfo(files);
                             Console.WriteLine(fileInfo.Name);
@@ -73,8 +73,8 @@ namespace csv
                     case "save":
                         Save();
                         break;
-                    case "Load":
-
+                    case "load":
+                        Load();
 
                         break;
 
@@ -87,7 +87,7 @@ namespace csv
         }
         public static void table()
         {
-            var connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
+            SqliteConnection connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
             connection.Open();
             Console.WriteLine();
 
@@ -141,22 +141,61 @@ namespace csv
                 int rowsAffected = command.ExecuteNonQuery();
                 Console.WriteLine($"{rowsAffected} row(s) inserted.");
             }
+            connection.Close();
         }
         static long LastNum(SqliteConnection connection)
         {
             string selectQuery = "SELECT Number FROM UserFiles ORDER BY rowid DESC LIMIT 1;";
-            using (var command = new SqliteCommand(selectQuery, connection))
+            using (SqliteCommand command = new SqliteCommand(selectQuery, connection))
             {
                 var result = command.ExecuteScalar();
-                return result != null ? (long)result : -1; // Возвращаем -1, если нет записей
+                return result != null ? (long)result : -1;
             }
         }
         public static void Load()
         {
+            
+            
+            Console.Write("Введите комментарий: ");
+            string comment = Console.ReadLine();
+            SqliteConnection connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
+                connection.Open();
+                string query = "SELECT FileData FROM UserFiles WHERE Comment LIKE @comment";
+                using (SqliteCommand cmd = new SqliteCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@comment", "%" + comment + "%");
+
+                    using (SqliteDataReader reader = cmd.ExecuteReader())
+                    {
+                        bool found = false;
+                        while (reader.Read())
+                        {
+                            found = true;
+                            
+                            byte[] fileData = (byte[])reader["FileData"];
+
+                            
+                            File.WriteAllBytes(Directory.GetCurrentDirectory() + "//" + "Repository//1.txt", fileData);
+                        }
+
+                        if (!found)
+                        {
+                            Console.WriteLine("Файлы не найдены по указанному комментарию.");
+                        }
+
+
+
+
+                    }
+
+
+
+                }
+            
         }
     }
-   
 }
+
 
 
 

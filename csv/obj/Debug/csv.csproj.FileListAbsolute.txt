@@ -76,3 +76,19 @@ D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\cs
 D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\csv.csproj.CopyComplete
 D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\csv.exe
 D:\207а Кошкарев и Михайлов\CSV-main\CSV-main\csv\obj\Debug\csv.pdb
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\x86\e_sqlite3.dll
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\x64\e_sqlite3.dll
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\csv.exe.config
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\csv.exe
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\csv.pdb
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\NULL\Desktop\CSV-main\csv\bin\Debug\Microsoft.Data.Sqlite.xml
+C:\Users\NULL\Desktop\CSV-main\csv\obj\Debug\csv.csproj.AssemblyReference.cache
+C:\Users\NULL\Desktop\CSV-main\csv\obj\Debug\csv.csproj.CoreCompileInputs.cache
+C:\Users\NULL\Desktop\CSV-main\csv\obj\Debug\csv.csproj.Up2Date
+C:\Users\NULL\Desktop\CSV-main\csv\obj\Debug\csv.exe
+C:\Users\NULL\Desktop\CSV-main\csv\obj\Debug\csv.pdb
