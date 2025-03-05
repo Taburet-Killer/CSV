@@ -18,7 +18,7 @@ namespace csv
         {
 
 
-
+            Console.WriteLine("Введите help для просмтора комманд");
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -75,7 +75,17 @@ namespace csv
                         break;
                     case "load":
                         Load();
-
+                        break;
+                    case "info":
+                        DisplayInfo();
+                        break;
+                    case "help":
+                        Console.WriteLine("mkdata - создаёт репозиторий, и базу данных репозитория");
+                        Console.WriteLine("dir - отображает файлы в репозитории");
+                        Console.WriteLine("cls - очищает консоль");
+                        Console.WriteLine("save - загружает файлы в базу данных");
+                        Console.WriteLine("load - выгружает файлы из базы данных в репозиторий");
+                        Console.WriteLine("info - выводит информацию из базы данных");
                         break;
 
                 }
@@ -119,8 +129,10 @@ namespace csv
         }
         public static void Save()
         {
-            byte[] fileData = File.ReadAllBytes(Directory.GetCurrentDirectory() + "\\Repository\\1.txt");
-            string fileName = Path.GetFileName(Directory.GetCurrentDirectory() + "\\Repository\\1.txt");
+            Console.WriteLine("Введите имя файла для сохранения вместе с расширением");
+            string fileadd = Console.ReadLine();
+            byte[] fileData = File.ReadAllBytes(Directory.GetCurrentDirectory() + "\\Repository\\" + fileadd );
+            string fileName = Path.GetFileName(Directory.GetCurrentDirectory() + "\\Repository\\" + fileadd);
             DateTime date = DateTime.Today;
             SqliteConnection connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
             connection.Open();
@@ -160,7 +172,7 @@ namespace csv
             string comment = Console.ReadLine();
             SqliteConnection connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
                 connection.Open();
-                string query = "SELECT FileData FROM UserFiles WHERE Comment LIKE @comment";
+                string query = "SELECT FileData, FileName FROM UserFiles WHERE Comment LIKE @comment";
                 using (SqliteCommand cmd = new SqliteCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@comment", "%" + comment + "%");
@@ -173,9 +185,10 @@ namespace csv
                             found = true;
                             
                             byte[] fileData = (byte[])reader["FileData"];
+                            string fileName = reader["FileName"].ToString();
 
-                            
-                            File.WriteAllBytes(Directory.GetCurrentDirectory() + "//" + "Repository//1.txt", fileData);
+
+                            File.WriteAllBytes(Directory.GetCurrentDirectory() + "//" + "Repository//" + fileName , fileData);
                         }
 
                         if (!found)
@@ -192,6 +205,49 @@ namespace csv
 
                 }
             
+        }
+        public static void DisplayInfo()
+        {
+            SqliteConnection connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
+            try
+            {
+                connection.Open();
+
+                string query = "SELECT UserName, DateAdded, FileName, Comment FROM UserFiles";
+
+                using (SqliteCommand cmd = new SqliteCommand(query, connection))
+                {
+                    using (SqliteDataReader reader = cmd.ExecuteReader())
+                    {
+                        Console.WriteLine("------------------------------------------------------------------------------------------------------");
+                        Console.WriteLine("| UserName            | DateAdded             | FileName                      | Comment                       |");
+                        Console.WriteLine("------------------------------------------------------------------------------------------------------");
+
+                        while (reader.Read())
+                        {
+                            string userName = reader["UserName"].ToString().PadRight(20); 
+                            DateTime dateAdded = DateTime.Parse(reader["DateAdded"].ToString());
+                            string dateAddedFormatted = dateAdded.ToString("yyyy-MM-dd");
+                            string fileName = reader["FileName"].ToString().PadRight(30);
+                            string comment = reader["Comment"].ToString().PadRight(30);
+
+                            Console.WriteLine($"| {userName} | {dateAddedFormatted} | {fileName} | {comment} |");
+                        }
+                        Console.WriteLine("------------------------------------------------------------------------------------------------------");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка при подключении к базе данных или выполнении запроса: {ex.Message}");
+            }
+            finally
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }
