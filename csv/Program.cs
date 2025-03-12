@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
 using System.IO;
+using System.Dynamic;
+using System.Net.Cache;
 
 namespace csv
 {
@@ -80,14 +82,17 @@ namespace csv
                         DisplayInfo();
                         break;
                     case "help":
-                        Console.WriteLine("mkdata - создаёт репозиторий, и базу данных репозитория");
+                        Console.WriteLine("mkrepo - создаёт репозиторий");
+                        Console.WriteLine("mkdata - создаёт базу данных репозитория");
                         Console.WriteLine("dir - отображает файлы в репозитории");
                         Console.WriteLine("cls - очищает консоль");
                         Console.WriteLine("save - загружает файлы в базу данных");
                         Console.WriteLine("load - выгружает файлы из базы данных в репозиторий");
                         Console.WriteLine("info - выводит информацию из базы данных");
                         break;
-
+                    case "mkrepo":
+                        NavigateDirectories();
+                        break;
                 }
             }
             catch (Exception e)
@@ -131,8 +136,8 @@ namespace csv
         {
             Console.WriteLine("Введите имя файла для сохранения вместе с расширением");
             string fileadd = Console.ReadLine();
-            byte[] fileData = File.ReadAllBytes(Directory.GetCurrentDirectory() + "\\Repository\\" + fileadd );
-            string fileName = Path.GetFileName(Directory.GetCurrentDirectory() + "\\Repository\\" + fileadd);
+            byte[] fileData = File.ReadAllBytes(File.ReadAllText(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path") + "\\" + fileadd);
+            string fileName = Path.GetFileName(File.ReadAllText(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path") +  "\\" + fileadd);
             DateTime date = DateTime.Today;
             SqliteConnection connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
             connection.Open();
@@ -166,45 +171,45 @@ namespace csv
         }
         public static void Load()
         {
-            
-            
+
+
             Console.Write("Введите комментарий: ");
             string comment = Console.ReadLine();
             SqliteConnection connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
-                connection.Open();
-                string query = "SELECT FileData, FileName FROM UserFiles WHERE Comment LIKE @comment";
-                using (SqliteCommand cmd = new SqliteCommand(query, connection))
+            connection.Open();
+            string query = "SELECT FileData, FileName FROM UserFiles WHERE Comment LIKE @comment";
+            using (SqliteCommand cmd = new SqliteCommand(query, connection))
+            {
+                cmd.Parameters.AddWithValue("@comment", "%" + comment + "%");
+
+                using (SqliteDataReader reader = cmd.ExecuteReader())
                 {
-                    cmd.Parameters.AddWithValue("@comment", "%" + comment + "%");
-
-                    using (SqliteDataReader reader = cmd.ExecuteReader())
+                    bool found = false;
+                    while (reader.Read())
                     {
-                        bool found = false;
-                        while (reader.Read())
-                        {
-                            found = true;
-                            
-                            byte[] fileData = (byte[])reader["FileData"];
-                            string fileName = reader["FileName"].ToString();
+                        found = true;
+
+                        byte[] fileData = (byte[])reader["FileData"];
+                        string fileName = reader["FileName"].ToString();
 
 
-                            File.WriteAllBytes(Directory.GetCurrentDirectory() + "//" + "Repository//" + fileName , fileData);
-                        }
+                        File.WriteAllBytes(File.ReadAllText(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path") + "\\" + fileName, fileData);
+                    }
 
-                        if (!found)
-                        {
-                            Console.WriteLine("Файлы не найдены по указанному комментарию.");
-                        }
-
-
-
-
+                    if (!found)
+                    {
+                        Console.WriteLine("Файлы не найдены по указанному комментарию.");
                     }
 
 
 
+
                 }
-            
+
+
+
+            }
+
         }
         public static void DisplayInfo()
         {
@@ -225,7 +230,7 @@ namespace csv
 
                         while (reader.Read())
                         {
-                            string userName = reader["UserName"].ToString().PadRight(20); 
+                            string userName = reader["UserName"].ToString().PadRight(20);
                             DateTime dateAdded = DateTime.Parse(reader["DateAdded"].ToString());
                             string dateAddedFormatted = dateAdded.ToString("yyyy-MM-dd");
                             string fileName = reader["FileName"].ToString().PadRight(30);
@@ -249,9 +254,89 @@ namespace csv
                 }
             }
         }
+
+        static void NavigateDirectories()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ВНИМАНИЕ ФУНКЦИЯ НЕДОРАБОТАНА И УДАЛЕНИЯ РЕПОЗИТОРИЯ ПРИХОДИТЬСЯ ДЕЛАТЬ ВРУЧНУЮ ");
+            Console.WriteLine("ТАК ЖЕ ВОЗМОЖНО СОЗДАТЬ РЕПОЗИТОРИЙ ТОЛЬКО НА ОСНОВНОМ ДИСКЕ");
+            Console.Beep(400, 2000);
+            Console.ResetColor();
+            Stack<string> directoryStack = new Stack<string>();
+            string currentDirectory = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory()); // Начало с корня текущего диска
+            int selectedIndex = 0;
+
+            while (!File.Exists(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path"))
+            {
+                Console.Clear();
+                string[] directories = Directory.GetDirectories(currentDirectory);
+                List<string> items = new List<string>(directories);
+
+                // Добавляем пункт "Назад", если есть куда вернуться
+                if (directoryStack.Count > 0)
+                {
+                    items.Insert(0, ".. (Назад)");
+                }
+
+                // Выводим доступные директории
+                for (int i = 0; i < items.Count; i++)
+                {
+                    if (i == selectedIndex)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Gray;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                    }
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(items[i]);
+                    Console.ResetColor();
+                    
+                }
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("↑ - вверх | ↓ -  вниз | → - создать репозиторий | ENTER - выбрать директорию");
+                Console.ResetColor();
+                var key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.UpArrow)
+                {
+                    selectedIndex = (selectedIndex > 0) ? selectedIndex - 1 : items.Count - 1;
+                }
+                else if (key.Key == ConsoleKey.DownArrow)
+                {
+                    selectedIndex = (selectedIndex < items.Count - 1) ? selectedIndex + 1 : 0;
+                }
+                else if (key.Key == ConsoleKey.RightArrow)
+                {
+                        Directory.CreateDirectory(currentDirectory + "\\" + "Repository");
+                        File.AppendAllText(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path", currentDirectory + "\\" + "Repository");
+                        Console.WriteLine($"Путь '{currentDirectory}' записан в файл 'repo.path'. Нажмите любую клавишу для продолжения...");
+                        Console.ReadKey();
+                        Console.Clear();
+                }
+                else if (key.Key == ConsoleKey.Enter)
+                {
+                    if (selectedIndex == 0 && directoryStack.Count > 0)
+                    {
+                        // Переход назад
+                        currentDirectory = directoryStack.Pop();
+                        selectedIndex = 0; // Сбросить индекс при возврате
+                    }
+                    else
+                    {
+                        string selectedPath = items[selectedIndex];
+
+                        // Проверяем, является ли элемент директорией
+                        if (Directory.Exists(selectedPath))
+                        {
+                            // Переход в выбранную директорию
+                            directoryStack.Push(currentDirectory);
+                            currentDirectory = selectedPath;
+                            selectedIndex = 0; // Сбросить индекс при переходе в папку
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-
 
 
 
