@@ -7,6 +7,7 @@ using Microsoft.Data.Sqlite;
 using System.IO;
 using System.Dynamic;
 using System.Net.Cache;
+using System.IO.Compression;
 
 namespace csv
 {
@@ -19,7 +20,8 @@ namespace csv
         static void Main(string[] args)
         {
 
-
+            Console.Title = "CSV";
+            
             Console.WriteLine("Введите help для просмтора комманд");
             while (true)
             {
@@ -129,15 +131,17 @@ namespace csv
             catch (SqliteException ex)
             {
                 Console.WriteLine("Ошибка при создании таблицы: " + ex.Message);
+                
             }
 
         }
         public static void Save()
         {
-            Console.WriteLine("Введите имя файла для сохранения вместе с расширением");
-            string fileadd = Console.ReadLine();
-            byte[] fileData = File.ReadAllBytes(File.ReadAllText(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path") + "\\" + fileadd);
-            string fileName = Path.GetFileName(File.ReadAllText(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path") +  "\\" + fileadd);
+            Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\temp");
+            ZipFile.CreateFromDirectory(File.ReadAllText(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path"),"temp\\repo.zip");
+            
+            byte[] fileData = File.ReadAllBytes(Directory.GetCurrentDirectory() + "\\temp\\repo.zip");
+            string fileName = Path.GetFileName(Directory.GetCurrentDirectory() + "\\temp\\repo.zip");
             DateTime date = DateTime.Today;
             SqliteConnection connection = new SqliteConnection("Data Source=" + Directory.GetCurrentDirectory() + "\\data\\Repository.db");
             connection.Open();
@@ -159,6 +163,7 @@ namespace csv
                 Console.WriteLine($"{rowsAffected} row(s) inserted.");
             }
             connection.Close();
+            Directory.Delete(Directory.GetCurrentDirectory() + "\\temp", true);
         }
         static long LastNum(SqliteConnection connection)
         {
@@ -171,7 +176,7 @@ namespace csv
         }
         public static void Load()
         {
-
+            Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\temp");
 
             Console.Write("Введите комментарий: ");
             string comment = Console.ReadLine();
@@ -193,8 +198,9 @@ namespace csv
                         string fileName = reader["FileName"].ToString();
 
 
-                        File.WriteAllBytes(File.ReadAllText(Directory.GetCurrentDirectory() + "\\" + "data" + "\\" + "repo.path") + "\\" + fileName, fileData);
+                        File.WriteAllBytes(Directory.GetCurrentDirectory() + "\\" + "temp" + "\\" + fileName, fileData);
                     }
+                    
 
                     if (!found)
                     {
@@ -209,7 +215,19 @@ namespace csv
 
 
             }
+            DirectoryInfo folder = new DirectoryInfo(File.ReadAllText(Directory.GetCurrentDirectory() + "\\data\\repo.path"));
 
+            foreach (FileInfo file in folder.GetFiles())
+            {
+                file.Delete();
+            }
+
+            foreach (DirectoryInfo dir in folder.GetDirectories())
+            {
+                dir.Delete(true);
+            }
+            ZipFile.ExtractToDirectory(Directory.GetCurrentDirectory() + "\\" + "temp" + "\\" + "repo.zip", File.ReadAllText(Directory.GetCurrentDirectory() + "\\data\\repo.path"));
+            Directory.Delete(Directory.GetCurrentDirectory() + "\\temp", true);
         }
         public static void DisplayInfo()
         {
