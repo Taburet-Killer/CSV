@@ -22,7 +22,7 @@ namespace csv
 
             Console.Title = "CSV";
             
-            Console.WriteLine("Введите help для просмтора комманд");
+            Console.WriteLine("Введите help для просмтора команд");
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -71,7 +71,7 @@ namespace csv
                         {
                             Console.WriteLine("База данных репозитория уже существует");
                         }
-                        if (!Directory.Exists(cdir + "\\" + "Repository")) { Directory.CreateDirectory(cdir + "\\" + "Repository"); }
+                        
 
                         break;
                     case "save":
@@ -275,11 +275,6 @@ namespace csv
 
         static void NavigateDirectories()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("ВНИМАНИЕ ФУНКЦИЯ НЕДОРАБОТАНА И УДАЛЕНИЯ РЕПОЗИТОРИЯ ПРИХОДИТЬСЯ ДЕЛАТЬ ВРУЧНУЮ ");
-            Console.WriteLine("ТАК ЖЕ ВОЗМОЖНО СОЗДАТЬ РЕПОЗИТОРИЙ ТОЛЬКО НА ОСНОВНОМ ДИСКЕ");
-            Console.Beep(400, 2000);
-            Console.ResetColor();
             Stack<string> directoryStack = new Stack<string>();
             string currentDirectory = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory()); // Начало с корня текущего диска
             int selectedIndex = 0;
